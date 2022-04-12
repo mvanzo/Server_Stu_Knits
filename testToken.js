@@ -12,7 +12,7 @@ const jwtTest = async ()=> {
         }
         // sign the jwt
         const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: (60 * 60) * 24 })
-        // console.log(token)
+        console.log(token)
         const decode = jwt.verify(token, process.env.JWT_SECRET)
         console.log(decode)
     } catch(err) {
