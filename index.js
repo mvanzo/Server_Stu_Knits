@@ -16,5 +16,6 @@ app.get('/', (req, res)=> {
 
 // controllers
 app.use('/api-v1/users', require('./controllers/api-v1/users'))
+app.use('/api-v1/products', require('./controllers/api-v1/products'))
 
 app.listen(PORT, ()=>console.log(`listening to port ${PORT} in the morning 🎧`))

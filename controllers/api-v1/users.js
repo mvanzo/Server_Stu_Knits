@@ -75,6 +75,7 @@ router.post("/login", async (req, res) => {
         name: foundUser.name,
         email: foundUser.email,
         id: foundUser.id,
+        admin: foundUser.admin,
     }
 
     // sign the jwt
@@ -83,7 +84,12 @@ router.post("/login", async (req, res) => {
     })
 
     // send it back
-    res.json({ token })
+    // res.json({ token })
+
+    // decode the token
+    const decode = jwt.verify(token, process.env.JWT_SECRET)
+    res.json({ decode })
+
 })
 
 module.exports = router
