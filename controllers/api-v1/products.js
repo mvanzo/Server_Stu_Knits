@@ -14,8 +14,12 @@ router.post('/add', async (req, res)=> {
 })
 
 // display all products
-router.get('/', (req, res)=> {
-    
+router.get('/', async (req, res)=> {
+    const findAllProducts = await db.Product.find({})
+    console.log(findAllProducts)
+    res.json({
+        findAllProducts
+    })
 })
 
 module.exports = router
