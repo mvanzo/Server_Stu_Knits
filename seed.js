@@ -27,6 +27,7 @@ const data = {
     ]
 }
 
+// seed product db
 const seedDb = async () => {
     await db.Product.deleteMany({});
     await db.Product.insertMany(data.products)
