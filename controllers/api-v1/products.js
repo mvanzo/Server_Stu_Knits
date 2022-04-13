@@ -2,25 +2,18 @@ const express = require("express")
 const router = express.Router()
 const db = require("../../models")
 
-// add starter db object
-router.post('/', async (req, res)=> {
-    try{
-        const allProducts = await db.Product.insertMany([{
-            name: req.body.name,
-            description: req.body.description,
-            timeToMake: req.body.timeToMake,
-            price: req.body.price
-        }])
-        res.json({ msg: 'this route is working' })
-    } catch(err){
-        console.log(err)
-    }
-})
-
-// router.post('/add-all', async (req, res)=> {
+// add starter db object -- DON'T NEED THIS - SEEDING INSTEAD
+// router.post('/', async (req, res)=> {
 //     try{
-//         const addAll = await db.Product.insertMany(data)
-//     }catch (err){
+//         const allProducts = await db.Product.insertMany([{
+//             name: req.body.name,
+//             description: req.body.description,
+//             timeToMake: req.body.timeToMake,
+//             price: req.body.price,
+//             imageUrl: req.body.imageUrl
+//         }])
+//         res.json({ msg: 'this route is working' })
+//     } catch(err){
 //         console.log(err)
 //     }
 // })
@@ -32,7 +25,8 @@ router.post('/add', async (req, res)=> {
             name: req.body.name,
             description: req.body.description,
             timeToMake: req.body.timeToMake,
-            price: req.body.price
+            price: req.body.price,
+            imgUrl: req.body.imageUrl
         })
         res.json('add single product route working')
     } catch (err){
