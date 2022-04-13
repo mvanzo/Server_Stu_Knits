@@ -84,11 +84,11 @@ router.post("/login", async (req, res) => {
     })
 
     // send it back
-    // res.json({ token })
+    res.json({ token })
 
     // decode the token
-    const decode = jwt.verify(token, process.env.JWT_SECRET)
-    res.json({ decode })
+    // const decode = jwt.verify(token, process.env.JWT_SECRET)
+    // res.json({ decode })
 
 })
 
