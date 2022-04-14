@@ -4,29 +4,25 @@ const db = require("../../models")
 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
-const storeItems = new Map([
-    [1, { priceInCents: 10000, name: "Learn React Today" }],
-    [2, { priceInCents: 20000, name: "Learn CSS Today" }],
-])
-
 router.post('/', async (req, res)=> {
     try{
+        const storeItems = await db.Product.find({})
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             mode: 'payment',
             line_items: req.body.items.map(item=> {
-                const storeItem = storeItems.get(item.id)
-                return {
+                return{
                     price_data: {
                         currency: 'usd',
                         product_data: {
-                            name: storeItem.name
+                            name: item.name
                         },
-                        unit_amount: storeItem.priceInCents
+                        unit_amount: item.priceInCents
                     },
                     quantity: item.quantity
                 }
             }),
+
             success_url: `${process.env.CLIENT_URL}`,
             cancel_url: `${process.env.CLIENT_URL}/shop`,
         })

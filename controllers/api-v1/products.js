@@ -25,7 +25,7 @@ router.post('/add', async (req, res)=> {
             name: req.body.name,
             description: req.body.description,
             timeToMake: req.body.timeToMake,
-            price: req.body.price,
+            priceInCents: req.body.priceInCents,
             imgUrl: req.body.imageUrl
         })
         res.json('add single product route working')
