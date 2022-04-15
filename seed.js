@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const db = require('./models')
+require('dotenv').config()
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/stu_knits'
 mongoose.connect(MONGODB_URI)

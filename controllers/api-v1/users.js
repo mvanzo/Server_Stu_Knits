@@ -20,14 +20,21 @@ router.post("/register", async (req, res) => {
         // hash the pass (could validate if we wanted)
         const salt = 12
         const hashedPassword = await bcrypt.hash(req.body.password, salt)
-
-        // create a user in th db
+        
         const newUser = await db.User.create({
             name: req.body.name,
             email: req.body.email,
             password: hashedPassword,
             // admin set to false automatically
             admin: false,
+        })
+        
+        // attempting to change newUser admin status to true if email is admin@admin.com - unable to do so
+        const filter = { email: 'admin@admin.com' }
+        const update = { admin: true }
+
+        const updateAdmin = await db.User.findOneAndUpdate(filter, update, {
+            new: true
         })
 
         // create a jwt payload to send back to the client
