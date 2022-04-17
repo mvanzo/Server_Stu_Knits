@@ -24,7 +24,7 @@ router.post('/add', async (req, res)=> {
         const newProduct = await db.Product.create({
             name: req.body.name,
             description: req.body.description,
-            timeToMake: req.body.timeToMake,
+            yarn: req.body.yarn,
             priceInCents: req.body.priceInCents,
             imgUrl: req.body.imageUrl
         })

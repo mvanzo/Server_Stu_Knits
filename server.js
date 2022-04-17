@@ -22,7 +22,6 @@ app.get('/', (req, res)=> {
     res.json({msg:'welcome to the user app'})
 })
 
-
 const config = {
     headers: { Authorization: `Bearer ${process.env.STRIPE_PRIVATE_KEY}` }
 };
@@ -37,8 +36,6 @@ app.get('/findorders', async (req, res)=> {
         console.log(err)
     }
 })
-
-
 
 // controllers
 app.use('/api-v1/users', require('./controllers/api-v1/users'))

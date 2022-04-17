@@ -8,25 +8,46 @@ mongoose.connect(MONGODB_URI)
 const data = {
     products: [
         {
-            name: "Green Sweater",
+            name: "Fisherman Sweater",
             description: "A really nice sweater that can be dressed up or dressed down",
-            timeToMake: "139 hours of knitting time",
-            priceInCents: 14021,
-            imgUrl: "https://n.nordstrommedia.com/id/sr3/fcbe293d-298d-40e3-92d7-b1faf8ced7b1.jpeg?h=365&w=240&dpr=2"
+            yarn: 'Brooklyn Tweed Shelter',
+            priceInCents: 25000,
+            imgUrl: "https://i.imgur.com/XeTnyLS.jpg"
         },
         {
-            name: "Red Hat",
-            description: "Chill Style Hat",
-            timeToMake: "15 hours of knitting time",
+            name: "Speckled Winter Hat",
+            description: "Chill style hat made with merino wool",
+            yarn: 'Cloudborn Superwash Merino Bulky',
             priceInCents: 4000,
-            imgUrl: "https://filson-products.imgix.net/images/11030235/Red/11030235_Red_main_001.png?h=700&w=1500&bg=ffffff&q=80&auto=format,compress"
+            imgUrl: "https://i.imgur.com/HI4050C_d.jpg?maxwidth=520&shape=thumb&fidelity=high"
         },
         {
-            name: "Socks",
-            description: "Comfy socks for around the house",
-            timeToMake: "8 hours of knitting time",
-            priceInCents: 3089,
-            imgUrl: "https://freshstitches.com/wp-content/uploads/2010/06/free-easy-knitting-sock-pattern-1024x774.jpg"
+            name: "Hipster Hat",
+            description: "Ribbed, comfy hat for any day. Make sure to look the part while you're drinking kombucha out of your mason jar",
+            yarn: 'Sunday from Sandnes Garn',
+            priceInCents: 4500,
+            imgUrl: "https://i.imgur.com/TY5hhyw.jpg"
+        },
+        {
+            name: "Weekend Slipover",
+            description: "Modern take on the classic sweater vest",
+            yarn: 'Woolfolk Luft and Shibu Knits Silk Cloud',
+            priceInCents: 15000,
+            imgUrl: "https://i.imgur.com/goJ7Wyz_d.jpg?maxwidth=520&shape=thumb&fidelity=high"
+        },
+        {
+            name: "Twisted Rib Mittens",
+            description: "Comfortable, warm mittens with a ribbed cuff",
+            yarn: 'Blue Sky Fibers held together with New Sky Light',
+            priceInCents: 4500,
+            imgUrl: "https://i.imgur.com/n1fWRZr.jpg"
+        },
+        {
+            name: "Gingham Tote",
+            description: "Lined knit tote for your summer picnic",
+            yarn: 'Shiny Happy Cotton',
+            priceInCents: 12500,
+            imgUrl: "https://i.imgur.com/0UA4PP7.jpg"
         },
     ]
 }
