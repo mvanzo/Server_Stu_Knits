@@ -23,7 +23,7 @@ const data = {
         },
         {
             name: "Hipster Hat",
-            description: "Ribbed, comfy hat for any day. Make sure to look the part while you're drinking kombucha out of your mason jar",
+            description: "Ribbed, comfy hat for any day. Make sure to look the part while drinking kombucha out of your mason jar",
             yarn: 'Sunday from Sandnes Garn',
             priceInCents: 4500,
             imgUrl: "https://i.imgur.com/TY5hhyw.jpg"
