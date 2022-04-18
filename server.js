@@ -7,7 +7,7 @@ const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 const axios = require('axios')
 
 const app = express()
-const PORT = 3002
+const PORT = process.env.PORT || 3002
 
 // middleware
 // app.use(
