@@ -23,7 +23,7 @@ router.post('/', async (req, res)=> {
             }),
 
             success_url: `${process.env.CLIENT_URL}`,
-            cancel_url: `${process.env.CLIENT_URL}/shop`,
+            cancel_url: `${process.env.CLIENT_URL}/success`,
         })
         res.json({ url: session.url })
     } catch(err) {
